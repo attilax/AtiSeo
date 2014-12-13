@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="lib/asm-all-2.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/forms-1.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/grouplayout.jar"/>
+	<classpathentry kind="lib" path="lib/JavaGPE_3DLF-2.5.jar"/>
+	<classpathentry kind="lib" path="lib/JTattoo.jar"/>
+	<classpathentry kind="lib" path="lib/laf-plugin.jar"/>
+	<classpathentry kind="lib" path="lib/laf-widget.jar"/>
+	<classpathentry kind="lib" path="lib/liquidlnf.jar"/>
+	<classpathentry kind="lib" path="lib/napkinlaf-alpha001.jar"/>
+	<classpathentry kind="lib" path="lib/nimrodlf-1.1a.jar"/>
+	<classpathentry kind="lib" path="lib/OfficeLnFs_2.7.jar"/>
+	<classpathentry kind="lib" path="lib/PgsLookAndFeel-jide.jar"/>
+	<classpathentry kind="lib" path="lib/substance-swingx.jar"/>
+	<classpathentry kind="lib" path="lib/substance6.1.jar"/>
+	<classpathentry kind="lib" path="lib/swingx.jar"/>
+	<classpathentry kind="lib" path="lib/trident.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
