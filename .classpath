@@ -18,5 +18,20 @@
 	<classpathentry kind="lib" path="lib/substance6.1.jar"/>
 	<classpathentry kind="lib" path="lib/swingx.jar"/>
 	<classpathentry kind="lib" path="lib/trident.jar"/>
+	<classpathentry kind="lib" path="lib/ati.jar"/>
+	<classpathentry kind="lib" path="lib/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.3.2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-all-1.7.6.jar"/>
+	<classpathentry kind="lib" path="lib/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="lib/sisu-guice-3.1.3-no_aop.jar"/>
+	<classpathentry kind="lib" path="lib/javaee-16.jar"/>
+	<classpathentry kind="lib" path="lib/ant-apache-log4j.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="lib/commons-dbutils-1.6.jar"/>
+	<classpathentry kind="lib" path="lib/junit.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

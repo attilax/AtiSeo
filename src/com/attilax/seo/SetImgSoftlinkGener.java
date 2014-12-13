@@ -30,10 +30,12 @@ import java.awt.event.ItemEvent;
 
 import javax.swing.SpringLayout;
 
+import com.attilax.Closure2;
 import com.attilax.skin.IS‌kinInir;
 import com.attilax.skin.SkinX;
 import com.attilax.ui.MsgBox;
 import com.attilax.win.Iskin;
+import com.attilax.win.MenuX;
 import com.birosoft.liquid.LiquidLookAndFeel;
 
 import javax.swing.JComboBox;
@@ -209,17 +211,28 @@ public class SetImgSoftlinkGener extends JFrame  implements Iskin, DropTargetLis
 		springLayout.putConstraint(SpringLayout.WEST, menuBar, 1, SpringLayout.WEST, frame.getContentPane());
 		frame.getContentPane().add(menuBar);
 		
-		JMenu mnFile = new JMenu("File");
-		menuBar.add(mnFile);
+		MenuX mx=new MenuX();
+		try {
+			mx.geneMenu(new Closure2<String,Object> () {
+
+				@Override
+				public Object execute(String fld) {
+					JMenu mnFile = new JMenu(fld);
+					menuBar.add(mnFile);
+//					JMenuItem mntmOpen = new JMenuItem("open");
+//					mnFile.add(mntmOpen);
+					return null;
+				}
+			});
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	//	JMenu mnFile = new JMenu("File");
+	
 		
-		JMenuItem mntmOpen = new JMenuItem("open");
-		mnFile.add(mntmOpen);
 		
-		JMenu mnEdit = new JMenu("edit");
-		menuBar.add(mnEdit);
-		
-		JMenuItem mntmNewMenuItem = new JMenuItem("about");
-		menuBar.add(mntmNewMenuItem);
+ 
 		
 	
 		addPopup(frame, popupMenu);
