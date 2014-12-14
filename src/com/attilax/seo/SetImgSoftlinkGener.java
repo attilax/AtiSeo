@@ -31,6 +31,7 @@ import java.awt.event.ItemEvent;
 import javax.swing.SpringLayout;
 
 import com.attilax.Closure2;
+import com.attilax.floatWin.FloatWin;
 import com.attilax.skin.IS‌kinInir;
 import com.attilax.skin.SkinX;
 import com.attilax.ui.MsgBox;
@@ -248,6 +249,7 @@ public class SetImgSoftlinkGener extends JFrame  implements Iskin, DropTargetLis
 		frame.setDropTarget( new DropTarget(frame,  DnDConstants.ACTION_COPY_OR_MOVE, this, true) );
 		//     jlist.setDropTarget(new DropTarget(jlist,
       // ));
+		new FloatWin();
 	}
 	JPopupMenu popupMenu = new JPopupMenu();
 protected void skinCombox_change_event(ItemEvent e) {

@@ -40,11 +40,12 @@ public class MenuX {
 		String txt=filex.read(menuf);
 	//	JSONObject jo=JSONObject.fromObject(txt);    cant solu key order ..cause inner sh hashmap
 		JsonNode rootNode=	JsonUtil4jackjson.buildNormalBinder().toJsonFromStr(txt);
+		 clsr.execute(rootNode);
 		  Iterator<String> flds_Ittr= 	rootNode.getFieldNames();
 		  while (flds_Ittr.hasNext()) {  
 			  String fld=flds_Ittr.next();
 			//  System.out.println(fld);
-			  clsr.execute(fld);
+			 
 		  }
 	}
 
