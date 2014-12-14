@@ -110,7 +110,7 @@ public class SetImgSoftlinkGener extends JFrame  implements Iskin, DropTargetLis
 	private void initialize() {
 		menuBar = new JMenuBar();
 		frame = new JFrame();
-		frame.setBounds(100, 100, 638, 484);
+		frame.setBounds(100, 100, 938, 484);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		SpringLayout springLayout = new SpringLayout();
 		frame.getContentPane().setLayout(springLayout);
@@ -234,7 +234,7 @@ public class SetImgSoftlinkGener extends JFrame  implements Iskin, DropTargetLis
 		
 		
  
-		
+		popupMenu = new JPopupMenu();
 	
 		addPopup(frame, popupMenu);
 		
@@ -251,7 +251,7 @@ public class SetImgSoftlinkGener extends JFrame  implements Iskin, DropTargetLis
       // ));
 		new FloatWin();
 	}
-	JPopupMenu popupMenu = new JPopupMenu();
+	JPopupMenu popupMenu  ;
 protected void skinCombox_change_event(ItemEvent e) {
 	  if(e.getStateChange() == ItemEvent.SELECTED){  
 	 String index= (String) this.comboBox.getSelectedItem();
@@ -305,14 +305,7 @@ protected void skinCombox_change_event(ItemEvent e) {
 		});
 	}
 
-	@Override
-	public void setSkinMenuitemInMenubar() {
-		JMenu mnFile = new JMenu("Skin");
-		menuBar.add(mnFile);
-		popupMenu.add(mnFile);
-		
-		
-	}
+ 
 
 	@Override
 	public void dragEnter(DropTargetDragEvent dtde) {
@@ -381,9 +374,11 @@ protected void skinCombox_change_event(ItemEvent e) {
 
 		//		String path = fileList[0].getPath();
 				String path=fileList.get(0).getPath();
+				GeneLink gl=new GeneLink();
+				gl.gene(path);
 				MsgBox.setTxt(path);
 				System.out.println(path);
-			} catch (UnsupportedFlavorException | IOException e) {
+			} catch ( Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
@@ -397,6 +392,12 @@ protected void skinCombox_change_event(ItemEvent e) {
 
 	@Override
 	public void dropActionChanged(DropTargetDragEvent dtde) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setSkinMenuitemInMenubar() {
 		// TODO Auto-generated method stub
 		
 	}

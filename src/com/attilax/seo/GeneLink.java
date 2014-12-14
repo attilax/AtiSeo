@@ -1,0 +1,80 @@
+package com.attilax.seo;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Properties;
+
+import com.attilax.Closure;
+import com.attilax.core;
+import com.attilax.biz.seo.getConnEx;
+import com.attilax.collection.CollX;
+import com.attilax.collection.listUtil;
+import com.attilax.io.filex;
+import com.attilax.io.pathx;
+import com.attilax.util.dirx;
+
+public class GeneLink {
+	// http://www.watchesnada.com/replica-watches/breitling-watches-bentley-asia-2813-auto-21j_661_p.html
+	// D:\home_src\watcheskof0\public_html\replica-watches\iwc-accessories-straps-boxsets-iwcacc004a-mark-xv-wall-clock-white-frame_3885_p.html
+	public String website = "http://www.watchesnada.com/replica-watches/";
+
+	public static void main(String[] args) throws Exception {
+		GeneLink c = new GeneLink();
+		c.gene("D:\\home_src\\watchesnada0\\public_html\\replica-watches");
+	}
+
+	int n = 0;
+
+	public void gene(String path) throws Exception {
+		String brdtxt = pathx.classPath(GeneLink.class) + "brand.txt";
+		List<String> brandLi = listUtil.file2List(brdtxt, "gbk");
+		// System.out.println(core.toJsonStrO88(brandLi));
+		// if("1"!="2")
+		// return;
+
+		// D:\workspace\AtiSeo\bin\linkgeneDB.properties
+		Properties prop = new Properties();
+//		InputStream in = this.getClass().getResourceAsStream(
+//				"/linkgeneDB.properties");
+		prop.load(new FileReader(new File(pathx.classPath()+"/linkgeneDB.properties")));
+		String envi = prop.getProperty("environment");
+		String driver = prop.getProperty(envi + ".driver");// mssql.driver
+		String url = prop.getProperty(envi + ".url");
+		String user = prop.getProperty(envi + ".username");
+		String pwd = prop.getProperty(envi + ".password");
+		Dbx4Mysql c = new Dbx4Mysql(driver, url, user, pwd);
+		dirx.trave(path, new Closure<String, Object>() {
+
+			@Override
+			public Object execute(String f) throws Exception {
+				// System.out.println(f);
+//				if (n > 100)
+//					return null;
+				String fname = filex.getFileName(f);
+				String etlAft = f.replaceAll("-", " ");
+				for (String brd : brandLi) {
+					// brd=brd.replace(" ","@");
+
+					if (etlAft.toLowerCase().contains(brd.toLowerCase())) {
+						System.out.println(brd + "||" + etlAft);
+						String url = website + fname;
+						String sql = " insert link_big(name,url,type,status)values('@n','@u',1,1) "
+								.replaceAll("@n", brd).replaceAll("@u", url);
+						c.executeUpdate(sql);
+					}
+				}
+
+				n++;
+				System.out.println(n);
+				return null;
+			}
+		});
+		//
+
+	}
+
+}
