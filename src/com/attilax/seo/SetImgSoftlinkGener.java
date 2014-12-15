@@ -213,22 +213,35 @@ public class SetImgSoftlinkGener extends JFrame  implements Iskin, DropTargetLis
 		frame.getContentPane().add(menuBar);
 		
 		MenuX mx=new MenuX();
+		mx.menubar=this.menuBar;
 		try {
-			mx.geneMenu(new Closure2<String,Object> () {
+			mx.geneMenu(new Closure2<String,Object> (){
 
 				@Override
-				public Object execute(String fld) {
-					JMenu mnFile = new JMenu(fld);
-					menuBar.add(mnFile);
-//					JMenuItem mntmOpen = new JMenuItem("open");
-//					mnFile.add(mntmOpen);
+				public Object execute(String arg0) {
+					// TODO Auto-generated method stub
 					return null;
-				}
-			});
+				}});
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+//		try {
+//			mx.geneMenu( new Closure2<String,Object> () {
+//
+//				@Override
+//				public Object execute(String fld) {
+//					JMenu mnFile = new JMenu(fld);
+//					menuBar.add(mnFile);
+////					JMenuItem mntmOpen = new JMenuItem("open");
+////					mnFile.add(mntmOpen);
+//					return null;
+//				}
+//			});
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	//	JMenu mnFile = new JMenu("File");
 	
 		
